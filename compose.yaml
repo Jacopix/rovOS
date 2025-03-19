@@ -1,0 +1,14 @@
+services:
+  ros2-container: 
+    build: ./docker/ROS2/
+    ports:
+      - "6080:80"
+      - "22:22"
+    volumes:
+      - type: bind
+        source: ./src
+        target: /home/ubuntu/Desktop/ROS2
+    security_opt:
+      - seccomp=unconfined
+    shm_size: 512m
+    restart: unless-stopped
