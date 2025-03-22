@@ -74,7 +74,7 @@ RUN DEBIAN_FRONTEND=noninteractive add-apt-repository ppa:mozillateam/ppa -y && 
     rm -rf /var/lib/apt/lists/*
 
 # Install ROS
-ENV ROS_DISTRO humble
+ENV ROS_DISTRO=humble
 # desktop or ros-base
 ARG INSTALL_PACKAGE=desktop
 
@@ -109,6 +109,10 @@ COPY ./entrypoint.sh /
 RUN dos2unix /entrypoint.sh
 ENTRYPOINT [ "/bin/bash", "-c", "/entrypoint.sh" ]
 
-ENV USER ubuntu
-ENV PASSWD ubuntu
+# Ensure the display used for graphics is always the one of the VNC server
+# e.g. Running "ign gazebo" on the remote shell, launches the gazebo window inside the VNC server rather than the host machine
+ENV DISPLAY=:1
+
+ENV USER=ubuntu
+ENV PASSWD=ubuntu
 

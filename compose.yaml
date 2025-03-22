@@ -1,6 +1,6 @@
 services:
   ros2-container: 
-    build: ./docker/ROS2/
+    build: ./docker/ROS2/ 
     ports:
       - "6080:80"
       - "22:22"
