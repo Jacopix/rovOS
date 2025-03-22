@@ -11,7 +11,8 @@ Follow these simple steps to start the system:
 
 2. **Start the container**  
    Run the following command in VS Code:
-   > **Dev Containers: Reopen in Container**  
+   > **Dev Containers: Reopen in Container**
+   
    This will start the container using the configurations defined in `.devcontainer/devcontainer.json`.
 
 ## Accessing the GUI
