@@ -1,1 +1,4 @@
 .DS_Store
+/ros2_wp/build
+/ros2_wp/install
+/ros2_wp/log

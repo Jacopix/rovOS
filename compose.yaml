@@ -6,7 +6,7 @@ services:
       - "22:22"
     volumes:
       - type: bind
-        source: ./src
+        source: ./ros2_wp
         target: /home/ubuntu/Desktop/ROS2
     security_opt:
       - seccomp=unconfined

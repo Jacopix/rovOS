@@ -44,7 +44,7 @@ RUN apt-get update && \
         supervisor wget curl gosu git sudo python3-pip tini \
         build-essential vim sudo lsb-release locales \
         bash-completion tzdata terminator \
-        dos2unix && \
+        dos2unix xclip && \
     apt-get autoclean && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists/*

@@ -76,12 +76,29 @@ EOF
 BASHRC_PATH=$HOME/.bashrc
 grep -F "source /opt/ros/$ROS_DISTRO/setup.bash" $BASHRC_PATH || echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> $BASHRC_PATH
 grep -F "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" $BASHRC_PATH || echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> $BASHRC_PATH
+grep -F "source /usr/share/colcon_cd/function/colcon_cd.sh" $BASHRC_PATH || echo "source /usr/share/colcon_cd/function/colcon_cd.sh" >> $BASHRC_PATH
+grep -F "export _colcon_cd_root=/opt/ros/humble/" $BASHRC_PATH || echo "export _colcon_cd_root=/opt/ros/humble/" >> $BASHRC_PATH
 chown $USER:$USER $BASHRC_PATH
 
 # Fix rosdep permission
 mkdir -p $HOME/.ros
 cp -r /root/.ros/rosdep $HOME/.ros/rosdep
 chown -R $USER:$USER $HOME/.ros
+
+# Add copy-to-clipboard command
+cat << 'EOF' > /usr/local/bin/copy
+#!/bin/bash
+if [ $# -eq 0 ]; then
+  echo "Utilizzo: $0 \"testo da copiare\""
+  exit 1
+fi
+testo="$*"
+echo "$testo" | xclip -selection clipboard
+echo "$testo copied to clipboard"
+EOF
+
+# Rendi eseguibile lo script
+chmod +x /usr/local/bin/copy
 
 # Add terminator shortcut
 mkdir -p $HOME/Desktop
