@@ -113,6 +113,6 @@ ENTRYPOINT [ "/bin/bash", "-c", "/entrypoint.sh" ]
 # e.g. Running "ign gazebo" on the remote shell, launches the gazebo window inside the VNC server rather than the host machine
 ENV DISPLAY=:1
 
-ENV USER=ubuntu
+ENV USER=root
 ENV PASSWD=ubuntu
 
