@@ -85,6 +85,8 @@ mkdir -p $HOME/.ros
 cp -r /root/.ros/rosdep $HOME/.ros/rosdep
 chown -R $USER:$USER $HOME/.ros
 
+
+# CUSTOM COMMAND ADDED
 # Add copy-to-clipboard command
 cat << 'EOF' > /usr/local/bin/copy
 #!/bin/bash
@@ -96,8 +98,6 @@ testo="$*"
 echo "$testo" | xclip -selection clipboard
 echo "$testo copied to clipboard"
 EOF
-
-# Rendi eseguibile lo script
 chmod +x /usr/local/bin/copy
 
 # Add terminator shortcut
