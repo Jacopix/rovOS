@@ -12,8 +12,12 @@
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "c17",
             "cppStandard": "gnu++17",
-            "intelliSenseMode": "linux-gcc-arm64"
+            "intelliSenseMode": "linux-gcc-arm64",
+            "forcedInclude": [
+                "${workspaceFolder}/.vscode/eigen_fix.h"
+            ]
         }
+        
     ],
     "version": 4
 }
