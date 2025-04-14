@@ -45,7 +45,7 @@ This ensures that the necessary definitions are preloaded by IntelliSense, impro
 
 For more details on how to run the code, please refer to our detailed setup guide available in our setup_dev file. This file contains information on workspace settings, build options, and other developer-specific configurations:
 
-[ros2_wp/docs/setup_dev.md](https://github.com/Jacopix/rovOS/blob/main/src/ros2_wp/docs/setup_dev.md)
+[ros2_wp/docs/setup_dev.md](https://github.com/Jacopix/rovOS/blob/main/src/ros2_wp/docs/README.md)
 
 
 ---
