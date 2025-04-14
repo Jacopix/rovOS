@@ -1,3 +1,5 @@
+# Dendencies to run yt_stream_node from my_camera pkg
+# Note: original pafy pkg is outdated. A forked pkg has been used
 numpy<2.0
 pafy @ git+https://github.com/henkmet/pafy.git
 yt-dlp
