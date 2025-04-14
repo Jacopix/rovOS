@@ -1,6 +1,7 @@
 {
     "python.analysis.extraPaths": [
         "/opt/ros/humble/local/lib/python3.10/dist-packages",
-        "./vortex_wp/build/vortex_msgs/rosidl_generator_py"
     ],
+    "cmake.ignoreCMakeListsMissing": true
+
 }

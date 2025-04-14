@@ -15,9 +15,14 @@
 # This Dockerfile is based on https://github.com/AtsushiSaito/docker-ubuntu-sweb
 # which is released under the Apache-2.0 license.
 
-FROM ubuntu:jammy-20250126
+FROM ubuntu:jammy-20250404
 
 ARG TARGETPLATFORM
+
+# Default user and password
+ARG USER=ubuntu
+ARG PASSWD=ubuntu
+
 LABEL maintainer="Tiryoh<tiryoh@gmail.com>"
 
 SHELL ["/bin/bash", "-c"]
@@ -49,6 +54,10 @@ RUN apt-get update && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists/*
 
+# Add default user
+RUN useradd -m -s /bin/bash ${USER} \
+ && echo "${USER} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/${USER}
+ 
 # noVNC and Websockify
 RUN git clone https://github.com/AtsushiSaito/noVNC.git -b add_clipboard_support /usr/lib/novnc
 RUN pip install git+https://github.com/novnc/websockify.git@v0.10.0
@@ -113,6 +122,5 @@ ENTRYPOINT [ "/bin/bash", "-c", "/entrypoint.sh" ]
 # e.g. Running "ign gazebo" on the remote shell, launches the gazebo window inside the VNC server rather than the host machine
 ENV DISPLAY=:1
 
-ENV USER=root
-ENV PASSWD=ubuntu
-
+ENV USER=${USER}
+ENV PASSWD=${PASSWD}

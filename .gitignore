@@ -1,4 +1,6 @@
 .DS_Store
-/ros2_wp/build
-/ros2_wp/install
-/ros2_wp/log
+/src/ros2_wp/build
+/src/ros2_wp/install
+/src/ros2_wp/log
+/src/ros2_wp/.vscode/c_cpp_properties.json
+/src/local-test

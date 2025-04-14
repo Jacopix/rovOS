@@ -355,4 +355,4 @@ echo "NOTE 1: --security-opt seccomp=unconfined flag is required to launch Ubunt
 echo -e 'See \e]8;;https://github.com/Tiryoh/docker-ros2-desktop-vnc/pull/56\e\\https://github.com/Tiryoh/docker-ros2-desktop-vnc/pull/56\e]8;;\e\\'
 echo "============================================================================================"
 
-exec /bin/tini -- supervisord -n -c /etc/supervisor/supervisord.conf    
+exec /bin/tini -- supervisord -n -c /etc/supervisor/supervisord.conf

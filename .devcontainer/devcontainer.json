@@ -1,6 +1,6 @@
 {
   "name": "rovOS",
-  "remoteUser": "root",
+  "remoteUser": "ubuntu",
   "workspaceFolder": "/home/ubuntu/Desktop/ROS2",
   "dockerComposeFile": "../compose.yaml",
   "service": "ros2-container"
