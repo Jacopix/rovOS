@@ -15,15 +15,16 @@
 # This Dockerfile is based on https://github.com/AtsushiSaito/docker-ubuntu-sweb
 # which is released under the Apache-2.0 license.
 
-FROM ubuntu:jammy-20250404
+FROM ubuntu:noble-20250404
 
 ARG TARGETPLATFORM
 
 # Default user and password
 ARG USER=ubuntu
-ARG PASSWD=ubuntu
+ARG PASSWORD=ubuntu
 
-LABEL maintainer="Tiryoh<tiryoh@gmail.com>"
+# Default folder for virtual environments
+ENV VIRTUAL_ENVS="/home/ubuntu/.virtualenvs"
 
 SHELL ["/bin/bash", "-c"]
 
@@ -46,7 +47,7 @@ RUN apt-get update -q && \
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
         tigervnc-standalone-server tigervnc-common \
-        supervisor wget curl gosu git sudo python3-pip tini \
+        supervisor wget curl gosu git sudo python3-pip python3-venv tini \
         build-essential vim sudo lsb-release locales \
         bash-completion tzdata terminator \
         dos2unix xclip && \
@@ -54,13 +55,21 @@ RUN apt-get update && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists/*
 
-# Add default user
-RUN useradd -m -s /bin/bash ${USER} \
- && echo "${USER} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/${USER}
- 
+# Add default user 
+RUN if ! id -u "${USER}" >/dev/null 2>&1; then \
+    useradd -m -s /bin/bash "${USER}"; \
+    fi \
+    && echo "${USER} ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/${USER}
+
+# Create virtual env folder
+RUN mkdir /home/ubuntu/.virtualenvs
+    
 # noVNC and Websockify
 RUN git clone https://github.com/AtsushiSaito/noVNC.git -b add_clipboard_support /usr/lib/novnc
-RUN pip install git+https://github.com/novnc/websockify.git@v0.10.0
+RUN python3 -m venv /home/ubuntu/.virtualenvs/vnc_venv && \
+    . /home/ubuntu/.virtualenvs/vnc_venv/bin/activate && \
+    pip install git+https://github.com/novnc/websockify.git@v0.10.0 && \
+    deactivate
 RUN ln -s /usr/lib/novnc/vnc.html /usr/lib/novnc/index.html
 
 # Set remote resize function enabled by default
@@ -71,19 +80,16 @@ RUN sed -i 's/Prompt=.*/Prompt=never/' /etc/update-manager/release-upgrades
 RUN sed -i 's/enabled=1/enabled=0/g' /etc/default/apport
 
 # Install Firefox
-RUN DEBIAN_FRONTEND=noninteractive add-apt-repository ppa:mozillateam/ppa -y && \
-    echo 'Package: *' > /etc/apt/preferences.d/mozilla-firefox && \
-    echo 'Pin: release o=LP-PPA-mozillateam' >> /etc/apt/preferences.d/mozilla-firefox && \
-    echo 'Pin-Priority: 1001' >> /etc/apt/preferences.d/mozilla-firefox && \
-    apt-get update -q && \
-    apt-get install -y \
-    firefox && \
-    apt-get autoclean && \
-    apt-get autoremove && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y \
+    wget \
+    tar \
+    libgtk-3-0 \
+    libdbus-glib-1-2 \
+    libasound2t64 \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install ROS
-ENV ROS_DISTRO=humble
+# Install ROS2
+ENV ROS_DISTRO=jazzy
 # desktop or ros-base
 ARG INSTALL_PACKAGE=desktop
 
@@ -99,17 +105,21 @@ RUN apt-get update -q && \
     rosdep init && \
     rm -rf /var/lib/apt/lists/*
 
+# Make sure to source ROS2 
+RUN echo "source /opt/ros/jazzy/setup.bash" >> /home/${USER}/.bashrc
+
+# Fetch ROS packages
 RUN rosdep update
 
-# Install simulation package
-RUN curl https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg && \
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" \
-    | tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null && \
-    apt-get update && \
-    apt-get install -y ignition-fortress && \
-    apt-get autoclean && \
-    apt-get autoremove && \
-    rm -rf /var/lib/apt/lists/*
+# Create pyenv and add it to PYTHONPATH
+# Note: necessary in order to let ROS2 find those packages, without installing them system-wide
+RUN python3 -m venv /home/${USER}/.virtualenvs/ros_venv
+ARG ROS_VIRTUAL_ENV="${VIRTUAL_ENVS}/ros_venv"
+ENV PYTHONPATH=""
+ENV PYTHONPATH="${ROS_VIRTUAL_ENV}/lib/python3.12/site-packages:${PYTHONPATH}"
+
+# Add command "ros2-env" for quick venv activation
+RUN echo "alias ros2-env='source /opt/ros/jazzy/setup.bash && source ${ROS_VIRTUAL_ENV}/bin/activate'" >> /home/${USER}/.bashrc
 
 # Enable apt-get completion after running `apt-get update` in the container
 RUN rm /etc/apt/apt.conf.d/docker-clean
@@ -123,4 +133,4 @@ ENTRYPOINT [ "/bin/bash", "-c", "/entrypoint.sh" ]
 ENV DISPLAY=:1
 
 ENV USER=${USER}
-ENV PASSWD=${PASSWD}
+ENV PASSWORD=${PASSWORD}
