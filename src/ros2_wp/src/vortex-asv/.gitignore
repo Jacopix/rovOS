@@ -1,0 +1,9 @@
+build/
+install/
+log/
+
+*.pcd
+*.pyc
+
+COLCON_IGNORE
+.vscode

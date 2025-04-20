@@ -1,0 +1,8 @@
+# Goal
+geometry_msgs/PoseStamped goal
+---
+# Result
+bool success
+---
+# Feedback
+vortex_msgs/ReferenceFilter feedback

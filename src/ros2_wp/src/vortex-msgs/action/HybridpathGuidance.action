@@ -1,0 +1,10 @@
+# Goal
+vortex_msgs/Waypoints waypoints
+
+---
+# Result
+bool success
+
+---
+# Feedback
+vortex_msgs/HybridpathReference feedback

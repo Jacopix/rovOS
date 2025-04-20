@@ -1,0 +1,10 @@
+# Goal
+geometry_msgs/PointStamped goal
+
+---
+# Result
+bool success
+
+---
+# Feedback
+vortex_msgs/LOSGuidance feedback

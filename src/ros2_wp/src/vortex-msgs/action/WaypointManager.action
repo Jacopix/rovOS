@@ -1,0 +1,13 @@
+# Goal
+geometry_msgs/PoseStamped[] waypoints
+string target_server
+float64 switching_threshold
+---
+# Result
+bool success
+uint32 completed_waypoints
+---
+# Feedback
+geometry_msgs/Pose current_pose
+uint32 current_waypoint_index
+float64 distance_to_waypoint

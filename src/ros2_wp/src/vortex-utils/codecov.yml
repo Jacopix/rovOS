@@ -1,0 +1,15 @@
+coverage:
+  precision: 2
+  round: down
+  status:
+    project:
+      default:
+        informational: true
+        flags:
+          - unittests
+    patch: off
+fixes:
+  - "ros_ws/src/vortex_utils/::"
+comment:
+  layout: "diff, flags, files"
+  behavior: default

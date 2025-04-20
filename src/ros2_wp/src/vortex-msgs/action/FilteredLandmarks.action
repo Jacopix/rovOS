@@ -1,0 +1,22 @@
+float32 IGNORE_DISTANCE =0.0
+uint8 PROCESSING_NEW_GOAL =4
+uint8 GOAL_CANCELLED =5
+uint8 CONNECTION_ERROR =6
+
+# Constants for landmark_type field
+uint8 ALL = 0
+uint8 BUOY   = 1
+uint8 BOAT   = 2
+uint8 WALL  = 69
+
+
+# Define the action request
+uint8 landmark_types
+float32  distance
+
+---
+# Define the action result
+uint8 result
+---
+# Define the action feedback
+vortex_msgs/OdometryArray feedback

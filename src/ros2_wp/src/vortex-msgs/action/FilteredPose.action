@@ -1,0 +1,8 @@
+# Goal
+uint8 num_measurements
+---
+# Result
+geometry_msgs/PoseStamped filtered_pose
+---
+# Feedback
+geometry_msgs/PoseStamped current_pose

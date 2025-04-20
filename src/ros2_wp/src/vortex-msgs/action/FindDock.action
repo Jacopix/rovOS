@@ -1,0 +1,8 @@
+# Goal
+bool start_search
+---
+# Result
+geometry_msgs/PoseStamped dock_pose
+---
+# Feedback
+float32 time_elapsed
