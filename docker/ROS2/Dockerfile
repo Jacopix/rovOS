@@ -15,6 +15,9 @@
 # This Dockerfile is based on https://github.com/AtsushiSaito/docker-ubuntu-sweb
 # which is released under the Apache-2.0 license.
 
+# TODO: setup MULTI-STAGE build
+# TODO: handle HOME and other paths
+
 FROM ubuntu:noble-20250404
 
 ARG TARGETPLATFORM

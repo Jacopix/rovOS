@@ -67,7 +67,7 @@ user=root
 [program:vnc]
 command=gosu '$USER' bash '$VNCRUN_PATH'
 [program:novnc]
-command=gosu '$USER' bash -c "source /home/ubuntu/vnc_venv/bin/activate && websockify --web=/usr/lib/novnc 80 localhost:5901"
+command=gosu '$USER' bash -c "source $VIRTUAL_ENVS/vnc_venv/bin/activate && websockify --web=/usr/lib/novnc 80 localhost:5901"
 EOF
 
 # colcon
@@ -83,6 +83,7 @@ mkdir -p $HOME/.ros
 cp -r /root/.ros/rosdep $HOME/.ros/rosdep
 chown -R $USER:$USER $HOME/.ros
 chown -R $USER:$USER $HOME/Desktop
+
 
 # clearup
 PASSWORD=
