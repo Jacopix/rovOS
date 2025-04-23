@@ -15,15 +15,15 @@ ament-pep257==0.17.2
 ament-uncrustify==0.17.2
 ament-xmllint==0.17.2
 angles==1.16.0
-# Editable install with no version control (blackbox==1.0.0)
--e /home/ubuntu/Desktop/ROS2/ros2_wp/build/blackbox
 builtin-interfaces==2.0.2
+catkin-pkg==1.0.0
 composition-interfaces==2.0.2
 cv-bridge==4.1.0
-d_star_lite==0.0.0
 demo-nodes-py==0.33.5
 diagnostic-msgs==5.3.6
+docutils==0.21.2
 domain-coordinator==0.12.0
+empy==4.2
 example-interfaces==0.12.0
 examples-rclpy-executors==0.19.5
 examples-rclpy-minimal-action-client==0.19.5
@@ -33,13 +33,9 @@ examples-rclpy-minimal-publisher==0.19.5
 examples-rclpy-minimal-service==0.19.5
 examples-rclpy-minimal-subscriber==0.19.5
 geometry-msgs==5.3.6
-hybridpath_controller==0.0.0
-hybridpath_guidance==0.0.0
 image-geometry==4.1.0
 interactive-markers==2.5.4
-# Editable install with no version control (internal_status==0.0.0)
--e /home/ubuntu/Desktop/ROS2/ros2_wp/build/internal_status
-joystick_interface_asv==0.0.0
+lark==1.2.2
 laser-geometry==2.7.0
 launch==3.4.4
 launch-ros==0.26.7
@@ -53,10 +49,14 @@ map-msgs==2.4.1
 MCP342x==0.3.5
 message-filters==4.11.5
 nav-msgs==5.3.6
+numpy==2.2.5
 osrf-pycommon==2.1.6
 pcl-msgs==1.0.0
 pendulum-msgs==0.33.5
+pyparsing==3.2.3
+python-dateutil==2.9.0.post0
 python-qt-binding==2.2.1
+PyYAML==6.0.2
 qt-dotgraph==2.7.5
 qt-gui==2.7.5
 qt-gui-cpp==2.7.5
@@ -124,14 +124,15 @@ rqt-topic==1.7.3
 sensor-msgs==5.3.6
 sensor-msgs-py==5.3.6
 service-msgs==2.0.2
+setuptools==79.0.0
 shape-msgs==5.3.6
+six==1.17.0
 smbus==1.1.post2
 sros2==0.13.3
 statistics-msgs==2.0.2
 std-msgs==5.3.6
 std-srvs==5.3.6
 stereo-msgs==5.3.6
-system_monitor==0.0.0
 teleop-twist-keyboard==2.4.0
 tf2-geometry-msgs==0.36.9
 tf2-kdl==0.36.9
@@ -146,5 +147,3 @@ turtlesim==1.8.3
 type-description-interfaces==2.0.2
 unique-identifier-msgs==2.5.0
 visualization-msgs==5.3.6
-vortex_msgs==0.0.1
-vortex_utils==0.0.0
