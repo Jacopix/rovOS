@@ -1,8 +1,0 @@
-# Goal
-bool start_search
----
-# Result
-geometry_msgs/PoseStamped board_pose
----
-# Feedback
-bool confirmed

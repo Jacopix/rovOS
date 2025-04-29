@@ -1,8 +1,0 @@
-# Goal
-vortex_msgs/Waypoints goal
----
-# Result
-bool success
----
-# Feedback
-vortex_msgs/ReferenceFilter feedback

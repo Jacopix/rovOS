@@ -1,5 +1,0 @@
-.. _actuators:
-
-=========
-Actuators
-=========
