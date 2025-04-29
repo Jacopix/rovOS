@@ -32,7 +32,11 @@ ROS2 is built around a **node/topic** architecture coordinated via **DDS** (Data
 
 ### 3.2 High-Level Diagram
 ```mermaid
-%%{init: {"theme":"redux","flowchart":{"layout":"elk"}}}%%
+%%{init: {
+  "theme": "default",
+  "flowchart":{"layout":"elk"}
+}}%%
+
 flowchart LR
     %% Camera nodes
     subgraph Sensors
