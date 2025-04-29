@@ -31,6 +31,7 @@ ROS2 is built around a **node/topic** architecture coordinated via **DDS** (Data
 - **Actions**: asynchronous tasks with feedback and cancellation support
 
 ### 3.2 High-Level Diagram
+>Note: for better readability, the diagram can also be viewed [here](https://www.mermaidchart.com/raw/2519ee6e-2415-4bc7-981e-add9a7b19515?theme=light&version=v0.1&format=svg) 
 ```mermaid
 %%{init: {
   "theme": "default",
