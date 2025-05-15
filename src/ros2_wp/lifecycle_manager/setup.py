@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'sensig_capture'
+package_name = 'lifecycle_manager'
 
 setup(
     name=package_name,
@@ -10,21 +10,18 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        ('share/sensig_capture/launch', ['launch/cameras_launch.py']),
-        ('share/' + package_name + '/config', ['config/camera_config.yaml']),
+        ('share/' + package_name + '/launch', ['launch/lifecycle_launch.py']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='ubuntu',
     maintainer_email='68518128+Jacopix@users.noreply.github.com',
     description='TODO: Package description',
-    license='Apache-2.0',
+    license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'CameraNode = sensig_capture.CameraNode:main',
-            'CameraSupervisorNode = sensig_capture.CameraSupervisorNode:main',
-            'StereoSyncNode = sensig_capture.StereoSyncNode:main'
+            'LifecycleManagerNode = lifecycle_manager.LifecycleManagerNode:main',
         ],
     },
 )
