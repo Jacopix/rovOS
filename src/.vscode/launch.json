@@ -1,0 +1,50 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Attach using Process Id",
+            "type": "debugpy",
+            "request": "attach",
+            "processId": "${command:pickProcess}"
+        },
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "ROS2 Python Node",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/ros2_wp/install/lifecycle_manager/lib/lifecycle_manager/LifecycleCameraManager",
+            "console": "integratedTerminal",
+            "env": {
+                "AMENT_PREFIX_PATH": "${workspaceFolder}/install",
+                "COLCON_PREFIX_PATH": "${workspaceFolder}/install",
+                "PYTHONPATH": "${workspaceFolder}/install/lifecycle_manager/lib/python3.12/site-packages:${workspaceFolder}/build/lifecycle_manager"
+            },
+            "envFile": "${workspaceFolder}/.env",
+            "args": []
+        },
+        {
+            "name": "Attach to ROS2 Node",
+            "type": "debugpy",
+            "request": "attach",
+            "connect": {
+              "host": "localhost",
+              "port": 5678
+            },
+            "pathMappings": [
+              {
+                "localRoot": "${workspaceFolder}/src/lifecycle_manager",
+                "remoteRoot": "${workspaceFolder}/src/lifecycle_manager"
+              }
+            ]
+          }
+    ]
+}
