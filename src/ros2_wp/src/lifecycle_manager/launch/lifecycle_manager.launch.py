@@ -27,7 +27,7 @@ def generate_launch_description():
         name='camera_manager_node',
         output='screen',
         parameters=[{
-            'managed_nodes': ['/camera1/camera1_node']  # il nome del nodo da gestire
+            'managed_nodes': ['/camera1/camera1_node', '/camera2/camera2_node']  # il nome del nodo da gestire
         }]
     )
 
