@@ -1,0 +1,14 @@
+{
+  "package_name": "dual_camera_msgs",
+  "output_dir": "/home/ubuntu/Desktop/ROS2/build/rosidl_generator_type_description/dual_camera_msgs",
+  "idl_tuples": [
+    "/home/ubuntu/Desktop/ROS2/build/rosidl_adapter/dual_camera_msgs:msg/ImagePair.idl"
+  ],
+  "include_paths": [
+    "sensor_msgs:/opt/ros/jazzy/share/sensor_msgs",
+    "builtin_interfaces:/opt/ros/jazzy/share/builtin_interfaces",
+    "geometry_msgs:/opt/ros/jazzy/share/geometry_msgs",
+    "std_msgs:/opt/ros/jazzy/share/std_msgs",
+    "service_msgs:/opt/ros/jazzy/share/service_msgs"
+  ]
+}

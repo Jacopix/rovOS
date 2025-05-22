@@ -1,0 +1,6 @@
+{
+  "package_name": "dual_camera_msgs",
+  "non_idl_tuples": [
+    "/home/ubuntu/Desktop/ROS2/ros2_wp/src/dual_camera_msgs:msg/ImagePair.msg"
+  ]
+}

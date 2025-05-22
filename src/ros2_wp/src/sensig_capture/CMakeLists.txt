@@ -19,7 +19,6 @@ find_package(lifecycle_msgs REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
 add_executable(camera_node src/camera_node.cpp)
-add_executable(supervisor_node src/supervisor_node.cpp)
 
 
 ament_target_dependencies(camera_node
@@ -29,13 +28,7 @@ ament_target_dependencies(camera_node
   lifecycle_msgs
   OpenCV
 )
-ament_target_dependencies(supervisor_node
-  rclcpp
-  rclcpp_lifecycle
-  sensor_msgs
-  lifecycle_msgs
-  OpenCV
-)
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights
@@ -53,9 +46,6 @@ install(TARGETS camera_node
   DESTINATION lib/${PROJECT_NAME}
 )
 
-install(TARGETS supervisor_node
-  DESTINATION lib/${PROJECT_NAME}
-)
 
 install(FILES
   package.xml

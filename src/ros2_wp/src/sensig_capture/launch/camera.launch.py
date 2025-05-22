@@ -12,27 +12,27 @@ def generate_launch_description():
         'camera_config.yaml'
     )
 
-    camera1 = LifecycleNode(
+    cam_left = LifecycleNode(
         package='sensig_capture',
         executable='camera_node',
-        name='camera1_node',
-        namespace='camera1',
+        name='cam_left_node',
+        namespace='cam_left',
         parameters=[config_path],
         output='log',
         autostart=True
     )
 
-    camera2 = LifecycleNode(
+    cam_right = LifecycleNode(
         package='sensig_capture',
         executable='camera_node',
-        name='camera2_node',
-        namespace='camera2',
+        name='cam_right_node',
+        namespace='cam_right',
         parameters=[config_path],
         output='log',
         autostart=True
     )
 
     return LaunchDescription([
-        camera1,
-        camera2
+        cam_left,
+        cam_right
     ])

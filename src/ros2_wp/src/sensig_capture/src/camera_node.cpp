@@ -61,7 +61,7 @@ protected:
         auto qos_ = rclcpp::QoS(rclcpp::KeepLast(1), rmw_qos_profile_sensor_data);
 
         // Setup publisher
-        publisher_ = this->create_publisher<sensor_msgs::msg::CompressedImage>("ip_stream_image", qos_);
+        publisher_ = this->create_publisher<sensor_msgs::msg::CompressedImage>("frame", qos_);
         RCLCPP_INFO(get_logger(), "Node configured");
         return CallbackReturn::SUCCESS;
     }
@@ -211,8 +211,11 @@ private:
 
         auto msg = sensor_msgs::msg::CompressedImage();
         msg.header.stamp = now();
+        msg.header.frame_id = std::string(this->get_name()) + "_" + std::to_string(total_frames_);
         msg.format = compression_format_;
         msg.data = encoded;
+
+        RCLCPP_INFO(this->get_logger(), "Publishing frame: %s", msg.header.frame_id.c_str());
 
         publisher_->publish(msg);
 

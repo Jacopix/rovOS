@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "dual_camera_msgs__py",
+		"source" : "/home/ubuntu/Desktop/ROS2/build/dual_camera_msgs__py"
+	}
+}

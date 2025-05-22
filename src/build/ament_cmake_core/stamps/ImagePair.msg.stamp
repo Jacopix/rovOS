@@ -1,0 +1,4 @@
+std_msgs/Header header
+
+sensor_msgs/CompressedImage left
+sensor_msgs/CompressedImage right

@@ -1,0 +1,18 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from dual_camera_msgs/msg/ImagePair.msg
+// generated code does not contain a copyright notice
+
+#include "sensor_msgs/msg/CompressedImage.idl"
+#include "std_msgs/msg/Header.idl"
+
+module dual_camera_msgs {
+  module msg {
+    struct ImagePair {
+      std_msgs::msg::Header header;
+
+      sensor_msgs::msg::CompressedImage left;
+
+      sensor_msgs::msg::CompressedImage right;
+    };
+  };
+};

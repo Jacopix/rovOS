@@ -80,5 +80,6 @@
         "typeinfo": "cpp",
         "variant": "cpp",
         "valarray": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "/home/ubuntu/Desktop/ROS2/ros2_wp/src/dual_camera_msgs"
 }

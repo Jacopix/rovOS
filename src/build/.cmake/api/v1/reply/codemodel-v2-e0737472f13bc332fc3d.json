@@ -1,0 +1,242 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-0f0c4c626df8eee37053.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				},
+				{
+					"build" : "dual_camera_msgs__py",
+					"jsonFile" : "directory-dual_camera_msgs__py-Debug-cb8f41eae95c68eb2bf2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/ubuntu/Desktop/ROS2/build/dual_camera_msgs__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "dual_camera_msgs",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_dual_camera_msgs_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_dual_camera_msgs_egg-Debug-1abd79eb11813361fb23.json",
+					"name" : "ament_cmake_python_build_dual_camera_msgs_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_dual_camera_msgs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_dual_camera_msgs-Debug-7e98db69747c3b1d1668.json",
+					"name" : "ament_cmake_python_copy_dual_camera_msgs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dual_camera_msgs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dual_camera_msgs-Debug-9802bba4d381eb882311.json",
+					"name" : "dual_camera_msgs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dual_camera_msgs__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dual_camera_msgs__cpp-Debug-597e3e93b38b612e36ed.json",
+					"name" : "dual_camera_msgs__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "dual_camera_msgs__py::@121aa47a09fd1843ab5a",
+					"jsonFile" : "target-dual_camera_msgs__py-Debug-8f44caf4cec14b262c5e.json",
+					"name" : "dual_camera_msgs__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dual_camera_msgs__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dual_camera_msgs__rosidl_generator_c-Debug-4a991013e1fe2919af94.json",
+					"name" : "dual_camera_msgs__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dual_camera_msgs__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dual_camera_msgs__rosidl_generator_py-Debug-995ea9ab485fedc14070.json",
+					"name" : "dual_camera_msgs__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dual_camera_msgs__rosidl_generator_type_description::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dual_camera_msgs__rosidl_generator_type_description-Debug-ef2e6a4e7c5ebc18f10b.json",
+					"name" : "dual_camera_msgs__rosidl_generator_type_description",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dual_camera_msgs__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dual_camera_msgs__rosidl_typesupport_c-Debug-8ffc7189bd45c7053c64.json",
+					"name" : "dual_camera_msgs__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dual_camera_msgs__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dual_camera_msgs__rosidl_typesupport_cpp-Debug-312ee37f8eaa3bdc5ade.json",
+					"name" : "dual_camera_msgs__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dual_camera_msgs__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dual_camera_msgs__rosidl_typesupport_fastrtps_c-Debug-5fb49915e261901b16d9.json",
+					"name" : "dual_camera_msgs__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dual_camera_msgs__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dual_camera_msgs__rosidl_typesupport_fastrtps_cpp-Debug-d272b290346d72c64590.json",
+					"name" : "dual_camera_msgs__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dual_camera_msgs__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dual_camera_msgs__rosidl_typesupport_introspection_c-Debug-04162ae488cacba225d0.json",
+					"name" : "dual_camera_msgs__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dual_camera_msgs__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dual_camera_msgs__rosidl_typesupport_introspection_cpp-Debug-37c828ec5ab97392667a.json",
+					"name" : "dual_camera_msgs__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dual_camera_msgs_s__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dual_camera_msgs_s__rosidl_typesupport_c-Debug-0f122d248a6afea304e9.json",
+					"name" : "dual_camera_msgs_s__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dual_camera_msgs_s__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dual_camera_msgs_s__rosidl_typesupport_fastrtps_c-Debug-57ce63d12d9f0df49c91.json",
+					"name" : "dual_camera_msgs_s__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dual_camera_msgs_s__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dual_camera_msgs_s__rosidl_typesupport_introspection_c-Debug-3359e5722de75c1b1209.json",
+					"name" : "dual_camera_msgs_s__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dual_camera_msgs_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dual_camera_msgs_uninstall-Debug-2e36bb154997c304c42d.json",
+					"name" : "dual_camera_msgs_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Debug-e76d9838a9f5cc83e169.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/ubuntu/Desktop/ROS2/build",
+		"source" : "/home/ubuntu/Desktop/ROS2/ros2_wp/src/dual_camera_msgs"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

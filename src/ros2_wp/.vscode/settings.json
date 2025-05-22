@@ -1,7 +1,13 @@
 {
     "python.analysis.extraPaths": [
-        "/opt/ros/humble/local/lib/python3.10/dist-packages",
-    ],
+        "/opt/ros/humble/local/lib/python3.12/dist-packages",
+        "/home/ubuntu/Desktop/ROS2/ros2_wp/install"
+
+  ],
+  "python.autoComplete.extraPaths": [
+    "/home/ubuntu/Desktop/ROS2/ros2_wp/install"
+
+  ],
     "cmake.ignoreCMakeListsMissing": true
 
 }

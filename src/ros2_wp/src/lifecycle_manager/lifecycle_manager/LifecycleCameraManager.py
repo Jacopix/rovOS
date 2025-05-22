@@ -1,20 +1,24 @@
 from typing import cast
-import debugpy
-from rclpy.executors import MultiThreadedExecutor
-import rclpy
-import rclpy.client
-from rclpy.parameter import Parameter
-from rclpy.node import Node
-from lifecycle_msgs.srv import GetState, ChangeState
-from lifecycle_msgs.msg import Transition, State
-from rclpy.callback_groups import ReentrantCallbackGroup
 from functools import partial
 from dataclasses import dataclass
 from typing import Optional, Dict
-from rclpy.task import Future
+import debugpy
+
+import rclpy
+import rclpy.client
+from rclpy.executors import MultiThreadedExecutor
+from rclpy.parameter import Parameter
+from rclpy.node import Node
+from rclpy.callback_groups import ReentrantCallbackGroup
 from rclpy.timer import Timer
 
+from lifecycle_msgs.srv import GetState, ChangeState
+from lifecycle_msgs.msg import Transition, State
 
+
+'''
+
+'''
 @dataclass
 class ManagedNode:
     name: str
@@ -181,7 +185,7 @@ def main(args=None):
     node = LifecycleCameraManager()
     executor = MultiThreadedExecutor()
     executor.add_node(node)
-
+    
     try:
         executor.spin()
     finally:
@@ -191,6 +195,8 @@ def main(args=None):
 if __name__ == '__main__':
     main()
 
+
+# Debug function to user vscode debugger
 def debug():
     debugpy.listen(("0.0.0.0", 5678))
     debugpy.wait_for_client()

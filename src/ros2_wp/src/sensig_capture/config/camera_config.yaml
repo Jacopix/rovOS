@@ -1,15 +1,17 @@
-/camera1/camera1_node:
+/cam_left/cam_left_node:
   ros__parameters:
     frame_logged: 50
     URI: "http://192.168.1.172:8000/video_feed"
     #URI: "http://10.5.34.51:8000:8000/video_feed"
+    fps: 30
     quality: 80
     compression_format: ".jpg"
 
-/camera2/camera2_node:
+/cam_right/cam_right_node:
   ros__parameters:
     frame_logged: 50
     URI: "http://192.168.1.172:8001/video_feed"
+    fps: 30
     #URI: "http://10.5.34.51:8000:8001/video_feed"
     quality: 80
     compression_format: ".jpg"
