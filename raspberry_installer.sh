@@ -41,32 +41,3 @@ colcon build --symlink-install
 . ~/ros2_jazzy/install/local_setup.bash
 
 echo "source ~/ros2_jazzy/install/local_setup.bash" > ~/.bashrc
-
-
-
-
-Step per mettere Python 3.10
-sudo apt update
-sudo apt install -y \
-  build-essential \
-  libssl-dev \
-  zlib1g-dev \
-  libncurses5-dev \
-  libncursesw5-dev \
-  libreadline-dev \
-  libsqlite3-dev \
-  libgdbm-dev \
-  libdb5.3-dev \
-  libbz2-dev \
-  libexpat1-dev \
-  liblzma-dev \
-  tk-dev \
-  wget
-
-cd /tmp
-wget https://www.python.org/ftp/python/3.10.13/Python-3.10.13.tgz
-tar -xf Python-3.10.13.tgz
-cd Python-3.10.13
-./configure --enable-optimizations
-make -j$(nproc)
-sudo make altinstall
