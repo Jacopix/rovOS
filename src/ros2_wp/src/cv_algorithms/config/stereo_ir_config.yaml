@@ -1,0 +1,6 @@
+# Manually defines parameters for this node
+/cv_algorithms/stereo_ir_node:
+    ros__parameters:
+        debug:  true
+        save:   false
+        time:   true

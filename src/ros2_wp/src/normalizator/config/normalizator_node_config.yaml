@@ -1,0 +1,4 @@
+# Manually defines parameters for this node
+/normalizator/normalizator_node:
+    ros__parameters:
+        debug: true
